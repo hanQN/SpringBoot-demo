@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(value = "classpath:test.properties",encoding = "UTF-8")
 @ConfigurationProperties(prefix = "com.han")
 public class TestConfigBean {
+
     private String text;
     private String text2;
 
