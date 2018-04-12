@@ -1,6 +1,7 @@
 package com.han.controller;
 
 import com.han.bean.ConfigBean;
+import com.han.bean.TestConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,8 @@ public class UserController {
 
     @Autowired
     private ConfigBean configBean;
+    @Autowired
+    private TestConfigBean testconfigBean;
 
     @Value("${com.email.address}")
     private String address;
@@ -29,5 +32,10 @@ public class UserController {
     public String test2(){
         //return "欢迎来到Controller！";
         return configBean.getAddress()+","+configBean.getPassword();
+    }
+
+    @RequestMapping("/text")
+    public String gettestText(){
+        return testconfigBean.getText()+"******<br/>"+testconfigBean.getText2();
     }
 }
