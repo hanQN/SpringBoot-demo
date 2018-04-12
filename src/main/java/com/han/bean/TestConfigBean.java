@@ -15,6 +15,7 @@ public class TestConfigBean {
 
     private String text;
     private String text2;
+    private long num;
 
     public String getText() {
         return text;
@@ -30,5 +31,13 @@ public class TestConfigBean {
 
     public void setText2(String text2) {
         this.text2 = text2;
+    }
+
+    public long getNum() {
+        return num;
+    }
+
+    public void setNum(long num) {
+        this.num = num;
     }
 }

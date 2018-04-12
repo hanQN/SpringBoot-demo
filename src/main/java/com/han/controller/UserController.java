@@ -1,5 +1,6 @@
 package com.han.controller;
 
+import com.han.Connection.DBConnector;
 import com.han.bean.ConfigBean;
 import com.han.bean.TestConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class UserController {
     private ConfigBean configBean;
     @Autowired
     private TestConfigBean testconfigBean;
+    @Autowired DBConnector dbConnector;
 
     @Value("${com.email.address}")
     private String address;
@@ -36,6 +38,15 @@ public class UserController {
 
     @RequestMapping("/text")
     public String gettestText(){
-        return testconfigBean.getText()+"******<br/>"+testconfigBean.getText2();
+        return testconfigBean.getText()+"<br/>"+testconfigBean.getText2()
+                +"<br/>随机值："+testconfigBean.getNum();
     }
+
+    @RequestMapping("dbinfo")
+    public String dbbase(){
+        dbConnector.dbconfigure();
+        return "连接成功！";
+    }
+
+
 }
