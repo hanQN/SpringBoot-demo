@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Created by 123 on 2018/4/12.
  */
-@ConfigurationProperties(prefix = "com.han")
+@ConfigurationProperties(prefix = "com.email")
 public class ConfigBean {
     private String address;
     private String password;

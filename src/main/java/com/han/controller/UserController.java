@@ -22,8 +22,12 @@ public class UserController {
 
     @RequestMapping("/test")
     public String test(){
-        //return "欢迎来到Controller！";
-        //return configBean.getAddress()+","+configBean.getPassword();
         return address + "," + password;
+    }
+
+    @RequestMapping("/test2")
+    public String test2(){
+        //return "欢迎来到Controller！";
+        return configBean.getAddress()+","+configBean.getPassword();
     }
 }
